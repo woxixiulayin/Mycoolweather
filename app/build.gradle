@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.coolweather.app"
         minSdkVersion 17
-        targetSdkVersion 20
+        targetSdkVersion 17
         versionCode 1
         versionName "1.0"
     }
@@ -17,6 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets { main { java.srcDirs = ['src/main/java', 'src/main/java/2'] } }
 }
 
 dependencies {
