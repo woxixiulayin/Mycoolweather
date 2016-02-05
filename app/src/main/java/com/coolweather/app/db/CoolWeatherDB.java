@@ -123,8 +123,8 @@ public class CoolWeatherDB {
             do {
                 Country country = new Country();
                 country.setId(cursor.getInt(cursor.getColumnIndex("id")));
-                country.setCountryname(cursor.getString(cursor.getColumnIndex("Country_name")));
-                country.setCountrycode(cursor.getString(cursor.getColumnIndex("Country_code")));
+                country.setCountryname(cursor.getString(cursor.getColumnIndex("country_name")));
+                country.setCountrycode(cursor.getString(cursor.getColumnIndex("country_code")));
                 country.setCityid(cityId);
                 list.add(country);
             }while(cursor.moveToNext());
