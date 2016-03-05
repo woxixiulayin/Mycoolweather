@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +38,7 @@ public class ChooseAreaActivity extends Activity {
 
     private ProgressDialog progressDialog;
     private TextView titleText;
+    private Button fragmentBtn;
     private ListView listView;
     private ArrayAdapter<String> adapter;
     private CoolWeatherDB coolWeatherDB;
@@ -70,6 +72,17 @@ public class ChooseAreaActivity extends Activity {
         setContentView(R.layout.choose_area);
         listView = (ListView) findViewById(R.id.list_view);
         titleText = (TextView) findViewById(R.id.title_text);
+
+        fragmentBtn = (Button) findViewById(R.id.fragmentBtn);
+        fragmentBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChooseAreaActivity.this, MainContainerActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, datalist);
         listView.setAdapter(adapter);
         coolWeatherDB = CoolWeatherDB.getInstance(this);
